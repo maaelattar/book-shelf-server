@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const BookSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: [true, "Title is required"],
   },
   isbn: {
     type: String,
-    required: true,
+    required: [true, "ISBN is required"],
   },
   author: {
     type: String,
-    required: true,
+    required: [true, "Author is required"],
   },
   description: {
     type: String,
