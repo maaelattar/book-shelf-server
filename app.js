@@ -1,5 +1,6 @@
 const express = require("express");
 require("dotenv").config();
+const morgan = require('morgan')
 
 const connectDB = require("./config/db");
 
@@ -14,6 +15,7 @@ app.use(cors({ origin: true, credentials: true }));
 
 app.use(express.json({ extended: false }));
 
+app.use(morgan('dev'));
 app.use("/api/books", books);
 
 const port = process.env.PORT || 8082;
